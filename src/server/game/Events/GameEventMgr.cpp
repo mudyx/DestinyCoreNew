@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
- * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
+ * This file is part of the DestinyCore Project. See AUTHORS file for Copyright information
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -45,6 +44,24 @@ GameEventMgr::ActiveEvents const& GameEventMgr::GetActiveEventList() const
 GameEventMgr::GameEventDataMap const& GameEventMgr::GetEventMap() const
 {
     return mGameEvent;
+}
+
+std::string const& GameEventMgr::GetEventDescription(uint16 eventId, LocaleConstant locale) const
+{
+    static std::string const empty;
+
+    if (eventId >= mGameEvent.size())
+        return empty;
+
+    if (locale == LOCALE_none)
+        locale = DEFAULT_LOCALE;
+
+    GameEventData const& eventData = mGameEvent[eventId];
+
+    if (locale != DEFAULT_LOCALE && eventData.descriptionLocale.size() > size_t(locale) && !eventData.descriptionLocale[locale].empty())
+        return eventData.descriptionLocale[locale];
+
+    return eventData.description;
 }
 
 bool GameEventMgr::CheckOneGameEvent(uint16 entry) const
@@ -338,12 +355,62 @@ void GameEventMgr::LoadFromDB()
             }
 
             pGameEvent.description = fields[6].GetString();
+            pGameEvent.descriptionLocale.clear();
 
             ++count;
         } while (result->NextRow());
 
         TC_LOG_INFO("server.loading", ">> Loaded %u game events in %u ms", count, GetMSTimeDiffToNow(oldMSTime));
 
+    }
+
+    TC_LOG_INFO("server.loading", "Loading Game Event Locale Data...");
+    {
+        uint32 oldMSTime = getMSTime();
+
+        QueryResult result = WorldDatabase.Query("SELECT eventEntry, locale, description FROM game_event_locale");
+        if (!result)
+        {
+            TC_LOG_INFO("server.loading", ">> Loaded 0 game event locale strings. DB table `game_event_locale` is empty.");
+        }
+        else
+        {
+            uint32 count = 0;
+            do
+            {
+                Field* fields = result->Fetch();
+
+                uint16 event_id = fields[0].GetUInt16();
+                if (event_id == 0)
+                {
+                    TC_LOG_ERROR("sql.sql", "`game_event_locale` game event entry 0 is reserved and can't be used.");
+                    continue;
+                }
+
+                if (event_id >= mGameEvent.size())
+                {
+                    TC_LOG_ERROR("sql.sql", "`game_event_locale` game event entry (%u) is out of range compared to max event entry in `game_event`", event_id);
+                    continue;
+                }
+
+                LocaleConstant locale = GetLocaleByName(fields[1].GetString());
+                if (locale == LOCALE_none)
+                {
+                    TC_LOG_ERROR("sql.sql", "`game_event_locale` has invalid locale '%s' for event %u, skipped.", fields[1].GetCString(), event_id);
+                    continue;
+                }
+
+                if (locale == DEFAULT_LOCALE)
+                {
+                    continue;
+                }
+
+                ObjectMgr::AddLocaleString(fields[2].GetString(), locale, mGameEvent[event_id].descriptionLocale);
+                ++count;
+            } while (result->NextRow());
+
+            TC_LOG_INFO("server.loading", ">> Loaded %u game event locale strings in %u ms", count, GetMSTimeDiffToNow(oldMSTime));
+        }
     }
 
     TC_LOG_INFO("server.loading", "Loading Game Event Saves Data...");

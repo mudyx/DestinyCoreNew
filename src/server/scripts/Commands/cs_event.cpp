@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
+ * This file is part of the DestinyCore Project. See AUTHORS file for Copyright information
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -56,9 +56,9 @@ public:
             GameEventData const& eventData = events[eventId];
 
             if (handler->GetSession())
-                handler->PSendSysMessage(LANG_EVENT_ENTRY_LIST_CHAT, eventId, eventId, eventData.description.c_str(), active);
+                handler->PSendSysMessage(LANG_EVENT_ENTRY_LIST_CHAT, eventId, eventId, sGameEventMgr->GetEventDescription(eventId, handler->GetSessionDbcLocale()).c_str(), active);
             else
-                handler->PSendSysMessage(LANG_EVENT_ENTRY_LIST_CONSOLE, eventId, eventData.description.c_str(), active);
+                handler->PSendSysMessage(LANG_EVENT_ENTRY_LIST_CONSOLE, eventId, sGameEventMgr->GetEventDescription(eventId, handler->GetSessionDbcLocale()).c_str(), active);
 
             ++counter;
         }
@@ -113,7 +113,7 @@ public:
         std::string occurenceStr = secsToTimeString(eventData.occurence * MINUTE);
         std::string lengthStr = secsToTimeString(eventData.length * MINUTE);
 
-        handler->PSendSysMessage(LANG_EVENT_INFO, eventId, eventData.description.c_str(), activeStr,
+        handler->PSendSysMessage(LANG_EVENT_INFO, eventId, sGameEventMgr->GetEventDescription(eventId, handler->GetSessionDbcLocale()).c_str(), activeStr,
             startTimeStr.c_str(), endTimeStr.c_str(), occurenceStr.c_str(), lengthStr.c_str(),
             nextStr.c_str());
         return true;
@@ -227,7 +227,7 @@ public:
             std::string nextStr = nextTime >= eventData.start && nextTime < eventData.end ? TimeToTimestampStr(GameTime::GetGameTime() + delay) : "-";
 
             if (handler->GetSession() && nextStr.length() > 1)
-                handler->PSendSysMessage(LANG_EVENTS_INFO, id, id, eventData.description.c_str(), active, nextStr.c_str());
+                handler->PSendSysMessage(LANG_EVENTS_INFO, id, id, sGameEventMgr->GetEventDescription(id, handler->GetSessionDbcLocale()).c_str(), active, nextStr.c_str());
         }
 
         return true;
