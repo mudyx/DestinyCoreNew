@@ -2965,21 +2965,24 @@ struct HolidayNamesEntry
     LocalizedString* Name;
 };
 
-// FileOptions: None
+#define MAX_HOLIDAY_DURATIONS 10
+#define MAX_HOLIDAY_DATES 16
+#define MAX_HOLIDAY_FLAGS 10
+
 struct HolidaysEntry
 {
-    int32       ID;
-    int32       Date[16];
-    uint16      Duration[10];
-    uint16      Region;
-    uint8       Looping;
-    uint8       CalendarFlags[10];
-    uint8       Priority;
-    int8        CalendarFilterType;
-    uint8       Flags;
-    int32       HolidayNameID;
-    int32       HolidayDescriptionID;
-    int32       TextureFileDataID[3];
+    uint32 ID;
+    uint32 Date[MAX_HOLIDAY_DATES];                                 // dates in unix time starting at January, 1, 2000
+    uint16 Duration[MAX_HOLIDAY_DURATIONS];
+    uint16 Region;
+    uint8 Looping;
+    uint8 CalendarFlags[MAX_HOLIDAY_FLAGS];
+    uint8 Priority;
+    int8 CalendarFilterType;
+    uint8 Flags;
+    uint32 HolidayNameID;
+    uint32 HolidayDescriptionID;
+    int32 TextureFileDataID[3];
 };
 
 // FileOptions: Index, None
