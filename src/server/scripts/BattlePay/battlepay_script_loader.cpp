@@ -15,9 +15,18 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SCRIPTLOADER_H
-#define SCRIPTLOADER_H
+// This is where scripts' loading functions should be declared:
 
-void AddScripts();
+// BattlePay
+void AddSC_BattlePay_Professions();
+void AddSC_BattlePay_Services();
 
-#endif
+
+// The name of this function should match:
+// void Add${NameOfDirectory}Scripts()
+void AddBattlePayScripts()
+{
+    // BattlePay
+	AddSC_BattlePay_Professions();
+	AddSC_BattlePay_Services();
+}

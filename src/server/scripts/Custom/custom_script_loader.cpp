@@ -15,9 +15,39 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SCRIPTLOADER_H
-#define SCRIPTLOADER_H
+// This is where scripts' loading functions should be declared:
 
-void AddScripts();
+// Arena Spectator
+void AddSC_arena_spectator_script();
 
-#endif
+// Custom Invasion Event
+void Addsc_dalaran_invasion();
+
+// LFG Solo
+void AddLfgSoloScripts();
+
+// Loskutik
+void AddSC_Loskutik();
+
+// Solocraft
+void AddSC_solocraft();
+
+// The name of this function should match:
+// void Add${NameOfDirectory}Scripts()
+void AddCustomScripts()
+{
+	// Arena Spectator
+	AddSC_arena_spectator_script();
+
+	// Custom Invasion Event
+	Addsc_dalaran_invasion();
+
+	// LFG Solo
+	AddLfgSoloScripts();
+	
+	// Loskutik
+	AddSC_Loskutik();
+
+	// Solocraft
+	AddSC_solocraft();
+}

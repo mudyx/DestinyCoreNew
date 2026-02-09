@@ -15,9 +15,17 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SCRIPTLOADER_H
-#define SCRIPTLOADER_H
+// This is where scripts' loading functions should be declared:
 
-void AddScripts();
+// Maelstrom
+void AddSC_kezan();
+void AddSC_lost_isle();
 
-#endif
+// The name of this function should match:
+// void Add${NameOfDirectory}Scripts()
+void AddMaelstromScripts()
+{
+    // Maelstrom
+    AddSC_kezan();
+	AddSC_lost_isle();
+}
