@@ -85,6 +85,12 @@ BattlenetPort = 1119
 LoginREST.Port = 8081
 LoginREST.ExternalAddress=127.0.0.1
 LoginREST.LocalAddress=127.0.0.1
+#
+#    RestWaitTime
+#        Description: Validity time (in seconds) for REST login tickets before they expire.
+#        Default:     60
+
+RestWaitTime = 60
 
 #
 #
@@ -93,6 +99,12 @@ LoginREST.LocalAddress=127.0.0.1
 #        Default:     "0.0.0.0" - (Bind to all IPs on the system)
 
 BindIP = "0.0.0.0"
+#
+#    Network.Threads
+#        Description: Number of network worker threads (must be > 0).
+#        Default:     1
+
+Network.Threads = 1
 
 #
 #    PidFile
@@ -153,6 +165,12 @@ WrongPass.BanTime = 600
 #                     1 - (Ban Account)
 
 WrongPass.BanType = 0
+#
+#    BanExpiryCheckInterval
+#        Description: Interval (in seconds) to check and expire temporary bans.
+#        Default:     60
+
+BanExpiryCheckInterval = 60
 
 #
 #    WrongPass.Logging
