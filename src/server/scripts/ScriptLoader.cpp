@@ -44,6 +44,7 @@ void AddCustomScripts();
 void AddDraenorScripts();
 void AddEasternKingdomsScripts();
 void AddEventsScripts();
+void AddGarrisonScripts();
 void AddInvasionsScripts();
 void AddKalimdorScripts();
 void AddMaelstromScripts();
@@ -51,6 +52,7 @@ void AddNorthrendScripts();
 void AddOutdoorPvPScripts();
 void AddOutlandScripts();
 void AddPandariaScripts();
+void AddPetBattleScripts();
 void AddScenarioScripts();
 void AddWorldScripts();
 #endif
@@ -84,6 +86,7 @@ void AddScripts()
 	AddDraenorScripts();
 	AddEasternKingdomsScripts();
 	AddEventsScripts();
+	AddGarrisonScripts();
 	AddInvasionsScripts();
 	AddKalimdorScripts();
 	AddMaelstromScripts();
@@ -91,6 +94,7 @@ void AddScripts()
 	AddOutdoorPvPScripts();
 	AddOutlandScripts();
 	AddPandariaScripts();
+	AddPetBattleScripts();
 	AddScenarioScripts();
 	AddWorldScripts();
 #endif

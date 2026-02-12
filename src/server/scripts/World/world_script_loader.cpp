@@ -18,15 +18,6 @@
 // This is where scripts' loading functions should be declared:
 
 // World
-// Garrison
-void AddSC_garrison_general();
-void AddSC_garrison_instance();
-
-// PetBattle
-void AddSC_petbattle_abilities();
-void AddSC_PetBattlePlayerScript();
-void AddSC_npc_PetBattleTrainer();
-
 // Achievement
 void AddSC_achievement_scripts();
 
@@ -89,15 +80,6 @@ void AddSC_server_mail();
 void AddWorldScripts()
 {
     // World
-	// Garrison
-    AddSC_garrison_general();
-	AddSC_garrison_instance();
-	
-	// PetBattle
-	AddSC_petbattle_abilities();
-	AddSC_PetBattlePlayerScript();
-	AddSC_npc_PetBattleTrainer();
-	
 	// Achievement
 	AddSC_achievement_scripts();
 	
