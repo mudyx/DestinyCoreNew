@@ -15,33 +15,6 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// This is where scripts' loading functions should be declared:
+#include "ScriptMgr.h"
 
-// Arena Spectator
-void AddSC_arena_spectator_script();
-
-// LFG Solo
-void AddLfgSoloScripts();
-
-// Loskutik
-void AddSC_Loskutik();
-
-// Solocraft
-void AddSC_solocraft();
-
-// The name of this function should match:
-// void Add${NameOfDirectory}Scripts()
-void AddCustomScripts()
-{
-	// Arena Spectator
-	AddSC_arena_spectator_script();
-
-	// LFG Solo
-	AddLfgSoloScripts();
-	
-	// Loskutik
-	AddSC_Loskutik();
-
-	// Solocraft
-	AddSC_solocraft();
-}
+void AddSC_class_hall_druid() { }

@@ -17,31 +17,35 @@
 
 // This is where scripts' loading functions should be declared:
 
-// Arena Spectator
-void AddSC_arena_spectator_script();
-
-// LFG Solo
-void AddLfgSoloScripts();
-
-// Loskutik
-void AddSC_Loskutik();
-
-// Solocraft
-void AddSC_solocraft();
+// Class Halls
+void AddSC_class_hall_dh();
+void AddSC_class_hall_dk();
+void AddSC_class_hall_druid();
+void AddSC_class_hall_hunter();
+void AddSC_class_hall_mage();
+void AddSC_class_hall_monk();
+void AddSC_class_hall_paladin();
+void AddSC_class_hall_priest();
+void AddSC_class_hall_rogue();
+void AddSC_class_hall_shaman();
+void AddSC_class_hall_warlock();
+void AddSC_class_hall_warrior();
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
-void AddCustomScripts()
+void AddClassHallsScripts()
 {
-	// Arena Spectator
-	AddSC_arena_spectator_script();
-
-	// LFG Solo
-	AddLfgSoloScripts();
-	
-	// Loskutik
-	AddSC_Loskutik();
-
-	// Solocraft
-	AddSC_solocraft();
+	// Class Halls
+	AddSC_class_hall_dh();
+	AddSC_class_hall_dk();
+	AddSC_class_hall_druid();
+	AddSC_class_hall_hunter();
+	AddSC_class_hall_mage();
+	AddSC_class_hall_monk();
+	AddSC_class_hall_paladin();
+	AddSC_class_hall_priest();
+	AddSC_class_hall_rogue();
+	AddSC_class_hall_shaman();
+	AddSC_class_hall_warlock();
+	AddSC_class_hall_warrior();
 }

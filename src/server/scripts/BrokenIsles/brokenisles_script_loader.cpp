@@ -175,8 +175,6 @@ void AddSC_instance_violet_hold_legion();
 void AddSC_violet_hold_legion();
 
 // misc
-void AddSC_invasion_point_argus();
-void AddSC_invasion_point_world_bosses();
 void AddSC_Mardum();
 void AddSC_sentinax();
 void AddSC_warden_prison();
@@ -353,8 +351,6 @@ void AddBrokenIslesScripts()
 	AddSC_violet_hold_legion();
 	
 	// misc
-	AddSC_invasion_point_argus();
-	AddSC_invasion_point_world_bosses();
 	AddSC_Mardum();
 	AddSC_sentinax();
 	AddSC_warden_prison();
