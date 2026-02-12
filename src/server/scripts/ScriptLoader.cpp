@@ -36,6 +36,7 @@ void AddCommandsScripts();
 void AddSpellScripts();
 
 #ifdef SCRIPTS
+void AddArgusScripts();
 void AddBattlePayScripts();
 void AddBrokenIslesScripts();
 void AddCustomScripts();
@@ -73,6 +74,7 @@ void AddScripts()
     AddSpellScripts();
 
 #ifdef SCRIPTS
+	AddArgusScripts();
 	AddBattlePayScripts();
     AddBrokenIslesScripts();
     AddCustomScripts();

@@ -27,6 +27,7 @@ PrepareScripts(Commands PRIVATE_SOURCES)
 PrepareScripts(BrawlersGuild PRIVATE_SOURCES)
 
 if(SCRIPTS)
+  PrepareScripts(Argus PRIVATE_SOURCES)
   PrepareScripts(BattlePay PRIVATE_SOURCES)
   PrepareScripts(BrokenIsles PRIVATE_SOURCES)
   PrepareScripts(Custom PRIVATE_SOURCES)

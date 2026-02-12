@@ -17,21 +17,6 @@
 
 // This is where scripts' loading functions should be declared:
 
-// Antours the Burning Throne
-void AddSC_antorus();
-void AddSC_boss_aggramar();
-void AddSC_boss_antoran();
-void AddSC_boss_argus();
-void AddSC_boss_coven_shivarres();
-void AddSC_boss_eonar();
-void AddSC_boss_felhounds();
-void AddSC_boss_hasabel();
-void AddSC_boss_imonar();
-void AddSC_boss_kingaroth();
-void AddSC_boss_varimathras();
-void AddSC_boss_worldbreaker();
-void AddSC_instance_antorus();
-
 // Black Rook Hold
 void AddSC_boss_illysanna_ravencrest();
 void AddSC_boss_lord_kurtalos_ravencrest();
@@ -149,13 +134,6 @@ void AddSC_boss_trilliax();
 void AddSC_instance_the_nightnold();
 void AddSC_the_nighthold();
 
-// The Seat of the Triumvirate
-void AddSC_boss_lura();
-void AddSC_boss_saprish();
-void AddSC_boss_viceroy_nezhar();
-void AddSC_boss_zuraal_the_ascended();
-void AddSC_instance_seat_of_the_triumvirate();
-
 // Tomb of Sargeras
 void AddSC_boss_demonic_inquisition();
 void AddSC_boss_fallen_avatar();
@@ -200,19 +178,15 @@ void AddSC_violet_hold_legion();
 void AddSC_invasion_point_argus();
 void AddSC_invasion_point_world_bosses();
 void AddSC_Mardum();
-void Addsc_paraxis();
 void AddSC_sentinax();
 void AddSC_warden_prison();
 void AddSC_world_bossess_legion();
 
 // Zones
-void AddSC_zone_antoran_wastes();
 void AddSC_zone_azsuna();
 void AddSC_zone_broken_shore();
 void AddSC_zone_dalaran_legion();
 void AddSC_zone_highmountain();
-void AddSC_zone_krokuun();
-void AddSC_zone_macaree();
 void AddSC_zone_stormheim();
 void AddSC_zone_suramar();
 void AddSC_zone_valsharah();
@@ -220,22 +194,7 @@ void AddSC_zone_valsharah();
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
 void AddBrokenIslesScripts()
-{
-	// Antours the Burning Throne
-	AddSC_antorus();
-	AddSC_boss_aggramar();
-	AddSC_boss_antoran();
-	AddSC_boss_argus();
-	AddSC_boss_coven_shivarres();
-	AddSC_boss_eonar();
-	AddSC_boss_felhounds();
-	AddSC_boss_hasabel();
-	AddSC_boss_imonar();
-	AddSC_boss_kingaroth();
-	AddSC_boss_varimathras();
-	AddSC_boss_worldbreaker();
-	AddSC_instance_antorus();	
-	
+{	
 	// Black Rook Hold
 	AddSC_boss_illysanna_ravencrest();
 	AddSC_boss_lord_kurtalos_ravencrest();
@@ -353,13 +312,6 @@ void AddBrokenIslesScripts()
 	AddSC_instance_the_nightnold();
 	AddSC_the_nighthold();
 	
-	// The Seat of the Triumvirate
-	AddSC_boss_lura();
-	AddSC_boss_saprish();
-	AddSC_boss_viceroy_nezhar();
-	AddSC_boss_zuraal_the_ascended();
-	AddSC_instance_seat_of_the_triumvirate();
-	
 	// Tomb of Sargeras
 	AddSC_boss_demonic_inquisition();
 	AddSC_boss_fallen_avatar();
@@ -404,19 +356,15 @@ void AddBrokenIslesScripts()
 	AddSC_invasion_point_argus();
 	AddSC_invasion_point_world_bosses();
 	AddSC_Mardum();
-	Addsc_paraxis();
 	AddSC_sentinax();
 	AddSC_warden_prison();
 	AddSC_world_bossess_legion();
 
 	// Zones
-	AddSC_zone_antoran_wastes();
 	AddSC_zone_azsuna();
 	AddSC_zone_broken_shore();
 	AddSC_zone_dalaran_legion();
 	AddSC_zone_highmountain();
-	AddSC_zone_krokuun();
-	AddSC_zone_macaree();
 	AddSC_zone_stormheim();
 	AddSC_zone_suramar();
 	AddSC_zone_valsharah();	
